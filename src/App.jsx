@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios'
 import Weather from './components/Weather'
+import Loader from './components/Loader'
 
 
 function App() {
@@ -54,8 +55,13 @@ useEffect(() => {
 
   return (
     <main className={`${weatherInfo?.weatherImage || ""} bg-center bg-cover min-h-screen text-black flex justify-center items-center font-principal-font p-2`}>
-    <Weather weatherInfo={weatherInfo} />
+    
+    {
+      weatherInfo ? <Weather weatherInfo={weatherInfo} /> : <Loader />
+    }
+
     </main>
+
   )
 }
 
