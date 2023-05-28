@@ -40,7 +40,7 @@ function App() {
             newData.weatherImage = 'bg-imagen6'
             }          
           
-            console.log(newData)
+            
           setWeatherInfo(newData)
           return newData;
         })
